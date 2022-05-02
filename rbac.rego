@@ -1,6 +1,6 @@
 package rbac
 
-default allow = true
+default allow = false
 
 allow {
     greeting_service
