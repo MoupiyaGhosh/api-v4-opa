@@ -22,7 +22,7 @@ swagger {
 }
 swagger {
     input.resource.method == "GET"
-    input.resource.path == "/webjars/swagger-ui/index.html"
+    regex.globs_match(input.resource.path, "/webjars.*")
 }
 # Non-restricted access
 greeting_service {
