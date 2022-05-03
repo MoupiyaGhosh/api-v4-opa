@@ -19,7 +19,7 @@ swagger {
 
 swagger {
     input.resource.method == "GET"
-    resources := ["/webjars.*","v3/api-docs/.*"]
+    resources := ["/webjars.*","v3/api-docs/.*", "/swagger"]
     resource := resources[_]
     regex.globs_match(input.resource.path, resource )
 }
