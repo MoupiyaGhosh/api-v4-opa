@@ -16,13 +16,12 @@ swagger {
     input.resource.method == "GET"
     input.resource.path == "/febe/v3/api-docs"
 }
+
 swagger {
     input.resource.method == "GET"
-    input.resource.path == "/swagger"
-}
-swagger {
-    input.resource.method == "GET"
-    regex.globs_match(input.resource.path, "/webjars.*")
+    resources := ["/webjars.*","v3/api-docs/.*"]
+    resource := resources[_]
+    regex.globs_match(input.resource.path, resource )
 }
 # Non-restricted access
 greeting_service {
