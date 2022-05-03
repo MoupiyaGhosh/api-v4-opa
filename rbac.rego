@@ -16,6 +16,10 @@ swagger {
     input.resource.method == "GET"
     input.resource.path == "/webjars/swagger-ui/index.html"
 }
+swagger {
+    input.resource.method == "GET"
+    input.resource.path == "/swagger"
+}
 
 # Non-restricted access
 greeting_service {
