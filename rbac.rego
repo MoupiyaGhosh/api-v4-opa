@@ -14,7 +14,7 @@ allow {
 
 swagger {
     input.resource.method == "GET"
-    input.resource.path == "/swagger"
+    input.resource.path == "/webjars/swagger-ui"
 }
 
 # Non-restricted access
