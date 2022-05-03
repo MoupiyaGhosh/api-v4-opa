@@ -14,7 +14,7 @@ allow {
 
 swagger {
     input.resource.method == "GET"
-    input.resource.path == "/webjars/swagger-ui/index.html"
+    input.resource.path == "/febe/v3/api-docs"
 }
 swagger {
     input.resource.method == "GET"
