@@ -27,7 +27,7 @@ febe_service {
     input.resource.method == "GET"
     input.resource.path == "/febe/tags"
     t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "CustomerXCheckAdmin"
+    t[1].asm_roles[_] == "CustomerCheckAdmin"
 }
 # Only GreeterAdmin role access
 greeting_service {
