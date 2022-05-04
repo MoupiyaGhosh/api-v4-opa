@@ -25,7 +25,7 @@ greeting_service {
 }
 febe_service {
     input.resource.method == "GET"
-    input.resource.path == "/febe/tags"
+    input.resource.path == "/febe/subscription"
     t := io.jwt.decode(input.token)
     t[1].asm_roles[_] == "CustomerCheckAdmin"
 }
