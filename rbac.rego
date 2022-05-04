@@ -14,12 +14,7 @@ allow {
 
 swagger {
     input.resource.method == "GET"
-    input.resource.path == "/febe/v3/api-docs"
-}
-
-swagger {
-    input.resource.method == "GET"
-    resources := ["/webjars.*","v3/api-docs/.*", "/swagger"]
+    resources := ["/webjars.*","v3/api-docs/.*", "/swagger","/febe/v3/api-docs","greeting-api/v3/api-docs"]
     resource := resources[_]
     regex.globs_match(input.resource.path, resource )
 }
