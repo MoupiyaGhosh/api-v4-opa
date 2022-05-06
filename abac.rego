@@ -8,5 +8,5 @@ allow {
   input.path = ["checks"]
   check = data.check_configurations[_]
   tag = check.tags[_]
-  tag.tag.name=="access"
+  tag.tag.name == input.path
 }
