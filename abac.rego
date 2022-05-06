@@ -7,5 +7,5 @@ allow {
   input.method = "GET"
   input.path = ["checks"]
   check = data.check_configurations[_]
-  check.interval = data.check_types[_]
+  check.interval = data.intervals[_]
 }
