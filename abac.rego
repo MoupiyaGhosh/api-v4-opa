@@ -6,6 +6,6 @@ default allow = false
 allow {
   input.method = "GET"
   input.path = ["checks"]
-  check = data.check_configurations[_]
-  check.checkType.name == "url-v2"
+  checkType = data.check_configurations[_].checkType
+  checkType.name == "url-v2"
 }
