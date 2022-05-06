@@ -7,5 +7,5 @@ allow {
   input.method = "GET"
   input.path = ["checks"]
   interval = data.check_configurations[_].name
-  interval = input.path
+  interval == input.path
 }
