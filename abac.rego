@@ -7,5 +7,5 @@ allow {
   input.method = "GET"
   input.path = ["checks"]
   interval = data.check_configurations[_].interval
-  interval == 10
+  interval > 10
 }
