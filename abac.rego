@@ -8,5 +8,5 @@ allow {
   input.path = ["checks"]
   check = data.check_configurations[_]
   check.interval = data.intervals[_]
-  check.checkTypeId =  uuid.rfc4122(data.check_types[_].id)
+  check.checkTypeId = data.check_types[_].id
 }
