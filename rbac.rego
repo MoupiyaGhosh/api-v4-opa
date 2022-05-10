@@ -25,9 +25,11 @@ greeting_service {
 }
 febe_service {
     input.resource.method == "GET"
-    input.resource.path == "/febe/subscription"
+    resources := ["/febe/subscription","/checks-api/checks"]
+    resource := resources[_]
+    regex.globs_match(input.resource.path, resource )
     t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "CustomerXCheckAdmin"
+    t[1].asm_roles[_] == "CustomerCheckAdmin"
 }
 # Only GreeterAdmin role access
 greeting_service {
