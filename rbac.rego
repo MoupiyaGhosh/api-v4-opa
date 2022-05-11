@@ -39,7 +39,7 @@ check_service {
     methods := ["GET","POST"]
     method := methods[_]
     regex.globs_match(input.resource.method, method)
-    input.resource.method == "/checks-api/checks"
+    input.resource.path == "/checks-api/checks"
     t := io.jwt.decode(input.token)
     t[1].asm_roles[_] == "CustomerCheckAdmin"
 }
