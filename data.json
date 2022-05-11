@@ -1,7 +1,7 @@
 {
 	"e8afa926-1c15-4bbc-ab4a-ee1e697063ed": {
 		"check_types": ["5dd5aa54-cd21-11ec-9d64-0242ac120002", "5fd5aa54-cd21-11ec-9d64-0242ab120002"],
-		"intervals": ["20","120"]
+		"intervals": ["10","80","120"]
 	},
 	"29c9c2ef-2b6c-4202-a3cd-66f6cb009379": {
 		"check_types": ["5dd5aa54-cd21-11ec-9d64-0242ac120002"],
