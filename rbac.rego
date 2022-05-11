@@ -9,6 +9,9 @@ allow {
     febe_service
 }
 allow {
+    check_service
+}
+allow {
     swagger
 }
 
@@ -25,12 +28,22 @@ greeting_service {
 }
 febe_service {
     input.resource.method == "GET"
-    resources := ["/febe/subscription","/checks-api/checks"]
+    resources := ["/febe/subscription"]
     resource := resources[_]
     regex.globs_match(input.resource.path, resource )
     t := io.jwt.decode(input.token)
     t[1].asm_roles[_] == "CustomerCheckAdmin"
 }
+
+check_service {
+    methods := ["GET","POST"]
+    method := methods[_]
+    regex.globs_match(input.resource.method, method)
+    input.resource.method == "/checks-api/checks"
+    t := io.jwt.decode(input.token)
+    t[1].asm_roles[_] == "CustomerCheckAdmin"
+}
+
 # Only GreeterAdmin role access
 greeting_service {
     input.resource.method == "GET"
