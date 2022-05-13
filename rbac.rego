@@ -26,7 +26,6 @@ result_service {
     methods := ["GET","POST"]
     method := methods[_]
     regex.globs_match(input.resource.method, method)
-    input.resource.path == "/result-api/.*/result/median"
 }
 febe_service {
     input.resource.method == "GET"
