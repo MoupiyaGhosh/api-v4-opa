@@ -3,7 +3,7 @@ package rbac
 default allow = false
 
 allow {
-    greeting_service
+    result_service
 }
 allow {
     febe_service
@@ -22,9 +22,11 @@ swagger {
     regex.globs_match(input.resource.path, resource )
 }
 # Non-restricted access
-greeting_service {
-    input.resource.method == "GET"
-    input.resource.path == "/greeting-api/hello"
+result_service {
+    methods := ["GET","POST"]
+    method := methods[_]
+    regex.globs_match(input.resource.method, method)
+    input.resource.path == "/result-api/.*"
 }
 febe_service {
     input.resource.method == "GET"
