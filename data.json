@@ -5,6 +5,6 @@
 	},
 	"29c9c2ef-2b6c-4202-a3cd-66f6cb009379": {
 		"check_types": ["5dd5aa54-cd21-11ec-9d64-0242ac120002"],
-		"intervals": ["10"]
+		"intervals": ["10","20","60","180"]
 	}
 }
