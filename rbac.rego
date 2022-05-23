@@ -42,7 +42,7 @@ check_service {
     regex.globs_match(input.resource.method, method)
     input.resource.path == "/checks-api/checks"
     t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "CustomerCheckAdmin"
+    t[1].asm_roles[_] == "CustomerCheckXAdmin"
 }
 
 # Only GreeterAdmin role access
