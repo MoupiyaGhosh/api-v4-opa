@@ -5,7 +5,9 @@ default allow = false
 allow {
     febe_service
 }
-
+allow {
+    check_service
+}
 allow {
     swagger
 }
@@ -32,7 +34,7 @@ check_service {
     regex.globs_match(input.resource.method, method)
     input.resource.path == "/checks-api/checks"
     t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "CustomerCheckXAdmin"
+    t[1].asm_roles[_] == "XXXX"
 }
 
 
