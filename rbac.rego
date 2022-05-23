@@ -3,9 +3,6 @@ package rbac
 default allow = false
 
 allow {
-    result_service
-}
-allow {
     febe_service
 }
 allow {
@@ -21,17 +18,7 @@ swagger {
     resource := resources[_]
     regex.globs_match(input.resource.path, resource )
 }
-# Non-restricted access
-result_service {
-    methods := ["GET","POST"]
-    method := methods[_]
-    regex.globs_match(input.resource.method, method)
-    resources := ["/result-api/.*"]
-    resource := resources[_]
-    regex.globs_match(input.resource.path, resource )
-    t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "GreetingServiceAdmin"
-}
+
 febe_service {
     input.resource.method == "GET"
     resources := ["/febe/subscription"]
