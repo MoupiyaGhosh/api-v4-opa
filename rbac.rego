@@ -5,9 +5,7 @@ default allow = false
 allow {
     febe_service
 }
-allow {
-    check_service
-}
+
 allow {
     swagger
 }
