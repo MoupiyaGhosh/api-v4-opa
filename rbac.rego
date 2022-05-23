@@ -26,6 +26,8 @@ result_service {
     methods := ["GET","POST"]
     method := methods[_]
     regex.globs_match(input.resource.method, method)
+    t := io.jwt.decode(input.token)
+    t[1].asm_roles[_] == "GreetingServiceAdmin"
 }
 febe_service {
     input.resource.method == "GET"
