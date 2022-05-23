@@ -50,12 +50,6 @@ check_service {
     t[1].asm_roles[_] == "CustomerCheckXAdmin"
 }
 
-# Only GreeterAdmin role access
-greeting_service {
-    input.resource.method == "GET"
-    t := io.jwt.decode(input.token)
-    t[1].asm_roles[_] == "GreetingServiceAdmin"
-}
 
 
 
