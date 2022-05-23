@@ -26,6 +26,9 @@ result_service {
     methods := ["GET","POST"]
     method := methods[_]
     regex.globs_match(input.resource.method, method)
+    resources := ["/result-api/.*"]
+    resource := resources[_]
+    regex.globs_match(input.resource.path, resource )
     t := io.jwt.decode(input.token)
     t[1].asm_roles[_] == "GreetingServiceAdmin"
 }
